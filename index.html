@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="백엔드 개발자 포트폴리오 - Flask, Spring Boot 전문">
+    <title>Backend Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 60px 50px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-emoji {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tech-stack {
+            margin-bottom: 40px;
+        }
+
+        .tech-stack h2 {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-github {
+            background: #24292e;
+            color: white;
+        }
+
+        .btn-github:hover {
+            background: #000;
+            transform: translateY(-3px);
+        }
+
+        .projects {
+            margin-top: 30px;
+            text-align: left;
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .projects h2 {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .project-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-item strong {
+            color: #667eea;
+            font-size: 1.05rem;
+        }
+
+        .project-item span {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .intro {
+                font-size: 1rem;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-emoji">👨‍💻</div>
+        
+        <h1>Backend Developer</h1>
+        <p class="subtitle">문제 해결에 집중하는 백엔드 개발자</p>
+        
+        <p class="intro">
+            안녕하세요! 2개의 프로젝트를 통해 <strong>Flask</strong>와 <strong>Spring Boot</strong>를 활용한<br>
+            실시간 통신, 트랜잭션 관리, API 설계 경험을 보유하고 있습니다.<br>
+            <strong>성능 최적화</strong>와 <strong>데이터 정합성</strong>에 집중합니다.
+        </p>
+
+        <div class="tech-stack">
+            <h2>💻 Tech Stack</h2>
+            <div class="tech-badges">
+                <span class="badge">Flask</span>
+                <span class="badge">Spring Boot</span>
+                <span class="badge">MySQL</span>
+                <span class="badge">JPA</span>
+                <span class="badge">SQLAlchemy</span>
+                <span class="badge">WebSocket</span>
+                <span class="badge">MQTT</span>
+                <span class="badge">REST API</span>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="https://www.notion.so/Backend-Developer-Portfolio-d42284a0eb564b69873c9d2dfe62afcd" 
+               class="btn btn-primary" 
+               target="_blank"
+               rel="noopener noreferrer">
+                📘 포트폴리오 보기
+            </a>
+            
+            <a href="https://github.com/yeonjaegit" 
+               class="btn btn-github" 
+               target="_blank"
+               rel="noopener noreferrer">
+                💻 GitHub 방문
+            </a>
+            
+            <a href="mailto:sba0613@naver.com" 
+               class="btn btn-secondary">
+                📧 이메일 보내기
+            </a>
+        </div>
+
+        <div class="projects">
+            <h2>📦 주요 프로젝트</h2>
+            <div class="project-item">
+                <strong>Bros</strong> - <span>SNS 백엔드 (Flask, Write-Heavy 전략으로 성능 10배 향상)</span>
+            </div>
+            <div class="project-item">
+                <strong>Smart Factory</strong> - <span>스마트 팩토리 시스템 (Spring Boot + Flask, 실시간 IoT 데이터 처리)</span>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 Backend Developer Portfolio | Last Updated: 2026.01.16
+        </footer>
+    </div>
+</body>
+</html>
