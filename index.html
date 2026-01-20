@@ -4,290 +4,456 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="백엔드 개발자 포트폴리오 - Flask, Spring Boot 전문">
-    <title>Backend Developer Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: #333;
-        }
-
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 60px 50px;
-            max-width: 800px;
-            width: 100%;
-            text-align: center;
-            animation: fadeIn 0.8s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .profile-emoji {
-            font-size: 80px;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-
-        .intro {
-            font-size: 1.1rem;
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .tech-stack {
-            margin-bottom: 40px;
-        }
-
-        .tech-stack h2 {
-            font-size: 1.2rem;
-            color: #2d3748;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .tech-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .btn-github {
-            background: #24292e;
-            color: white;
-        }
-
-        .btn-github:hover {
-            background: #000;
-            transform: translateY(-3px);
-        }
-
-        .projects {
-            margin-top: 30px;
-            text-align: left;
-            background: #f7fafc;
-            padding: 25px;
-            border-radius: 15px;
-        }
-
-        .projects h2 {
-            font-size: 1.2rem;
-            color: #2d3748;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .project-item {
-            padding: 12px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .project-item:last-child {
-            border-bottom: none;
-        }
-
-        .project-item strong {
-            color: #667eea;
-            font-size: 1.05rem;
-        }
-
-        .project-item span {
-            color: #718096;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            margin-top: 40px;
-            color: #a0aec0;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 30px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .intro {
-                font-size: 1rem;
-            }
-
-            .btn {
-                font-size: 1rem;
-                padding: 12px 25px;
-            }
-        }
-    </style>
+    <title>최연재 개발자 포트폴리오 : CYJ's Portfolio</title>
+    <link rel="stylesheet" href="style.css?v=20260120f">
 </head>
 <body>
-    <div class="container">
-        <div class="profile-emoji">👨‍💻</div>
-        
-        <h1>Backend Developer</h1>
-        <p class="subtitle">문제 해결에 집중하는 백엔드 개발자</p>
-        
-        <p class="intro">
-            안녕하세요! 2개의 프로젝트를 통해 <strong>Flask</strong>와 <strong>Spring Boot</strong>를 활용한<br>
-            실시간 통신, 트랜잭션 관리, API 설계 경험을 보유하고 있습니다.<br>
-            <strong>성능 최적화</strong>와 <strong>데이터 정합성</strong>에 집중합니다.
-        </p>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">CYJ's Portfolio</div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul id="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li class="about_me"><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#archiving">Archiving</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <div class="tech-stack">
-            <h2>💻 Tech Stack</h2>
-            <div class="tech-badges">
-                <span class="badge">Flask</span>
-                <span class="badge">Spring Boot</span>
-                <span class="badge">MySQL</span>
-                <span class="badge">JPA</span>
-                <span class="badge">SQLAlchemy</span>
-                <span class="badge">WebSocket</span>
-                <span class="badge">MQTT</span>
-                <span class="badge">REST API</span>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container fade-in">
+            <h1>- 최연재 -<br>백엔드 개발자 포트폴리오</h1>
+            <p class="subtitle">안녕하세요.<br>문제 해결과 본질에 집중하는 백엔드 개발자<br>최연재 입니다.</p>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="container">
+            <h2>
+                <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                ABOUT ME
+            </h2>
+            <div class="about-grid">
+                <div class="about-item">
+                    <div class="about-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-label">이름</div>
+                        <div class="about-value">최연재</div>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-label">생년월일</div>
+                        <div class="about-value">99.07.13</div>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-label">위치</div>
+                        <div class="about-value">경기도 성남시</div>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-label">연락처</div>
+                        <div class="about-value">010-4429-8183</div>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-label">이메일</div>
+                        <div class="about-value">sba0613@naver.com</div>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-label">학력</div>
+                        <div class="about-value">성일고등학교<br>(이과 졸업)</div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="links">
-            <a href="https://www.notion.so/Backend-Developer-Portfolio-d42284a0eb564b69873c9d2dfe62afcd" 
-               class="btn btn-primary" 
-               target="_blank"
-               rel="noopener noreferrer">
-                📘 포트폴리오 보기
-            </a>
-            
-            <a href="https://github.com/yeonjaegit" 
-               class="btn btn-github" 
-               target="_blank"
-               rel="noopener noreferrer">
-                💻 GitHub 방문
-            </a>
-            
-            <a href="mailto:sba0613@naver.com" 
-               class="btn btn-secondary">
-                📧 이메일 보내기
-            </a>
-        </div>
-
-        <div class="projects">
-            <h2>📦 주요 프로젝트</h2>
-            <div class="project-item">
-                <strong>Bros</strong> - <span>SNS 백엔드 (Flask, Write-Heavy 전략으로 성능 10배 향상)</span>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>
+                <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                SKILLS
+            </h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5"></path></svg>
+                        <h3>Language</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item python">Python</div>
+                        <div class="skill-item java">Java</div>
+                        <div class="skill-item javascript">JavaScript</div>
+                        <div class="skill-item cpp">C++</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-header">
+                        <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item html">HTML</div>
+                        <div class="skill-item css">CSS</div>
+                        <div class="skill-item react">React</div>
+                        <div class="skill-item bootstrap">Bootstrap</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-header">
+                        <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item flask">Flask</div>
+                        <div class="skill-item springboot">Spring Boot</div>
+                        <div class="skill-item nginx">Nginx</div>
+                        <div class="skill-item gunicorn">Gunicorn</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-header">
+                        <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                        <h3>Database</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item mysql">MySQL</div>
+                        <div class="skill-item postgresql">PostgreSQL</div>
+                        <div class="skill-item sqlalchemy">SQLAlchemy</div>
+                        <div class="skill-item jpa">JPA</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-header">
+                        <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"></path></svg>
+                        <h3>Data Science</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item pandas">Pandas</div>
+                        <div class="skill-item numpy">NumPy</div>
+                        <div class="skill-item tensorflow">TensorFlow</div>
+                        <div class="skill-item keras">Keras</div>
+                        <div class="skill-item sklearn">Scikit-learn</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-header">
+                        <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 6v6m-8-9l5.2 3M18.8 15l-5.2-3m0 6l5.2 3M5.2 9l5.2 3"></path></svg>
+                        <h3>DevOps & Cloud</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item git">Git</div>
+                        <div class="skill-item docker">Docker</div>
+                        <div class="skill-item aws">AWS</div>
+                        <div class="skill-item websocket">WebSocket</div>
+                        <div class="skill-item mqtt">MQTT</div>
+                        <div class="skill-item restapi">REST API</div>
+                        <div class="skill-item jwt">JWT</div>
+                        <div class="skill-item oauth">OAuth</div>
+                    </div>
+                </div>
             </div>
-            <div class="project-item">
-                <strong>Smart Factory</strong> - <span>스마트 팩토리 시스템 (Spring Boot + Flask, 실시간 IoT 데이터 처리)</span>
+        </div>
+    </section>
+
+    <!-- Archiving Section -->
+    <section id="archiving">
+        <div class="container">
+            <h2>
+                <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                ARCHIVING
+            </h2>
+            <div class="archive-grid">
+                <div class="archive-card">
+                    <div class="archive-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </div>
+                    <div class="archive-content">
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/yeonjaegit" class="url" target="_blank" rel="noopener noreferrer">
+                            <span>github.com/yeonjaegit</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                        </a>
+                        <p>엔지니어링 기록 및 레포지토리</p>
+                        <div class="archive-stats">
+                            <div class="stat-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                                <span>Public Repositories</span>
+                            </div>
+                            <div class="stat-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                <span>Flask, Spring Boot, React</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="archive-card">
+                    <div class="archive-icon notion-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
+                    </div>
+                    <div class="archive-content">
+                        <h3>Notion Portfolio</h3>
+                        <a href="https://www.notion.so/Backend-Developer-Portfolio-d42284a0eb564b69873c9d2dfe62afcd" class="url" target="_blank" rel="noopener noreferrer">
+                            <span>notion.so/portfolio</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                        </a>
+                        <p>프로젝트 상세 문서 및 기술 노트</p>
+                        <div class="archive-stats">
+                            <div class="stat-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                <span>프로젝트 문서화</span>
+                            </div>
+                            <div class="stat-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                                <span>학습 노트</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <footer>
-            © 2026 Backend Developer Portfolio | Last Updated: 2026.01.16
-        </footer>
-    </div>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>
+                <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                PROJECTS
+            </h2>
+            <div class="projects-list">
+                <!-- Project 3: 404 Smart Factory (최신) -->
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">404 스마트 팩토리 시스템</h3>
+                            <p class="project-period">2025.12 ~ 2026.01</p>
+                        </div>
+                        <span class="project-label">Backend</span>
+                    </div>
+                    <p class="project-description">
+                        IoT 센서와 AI 카메라를 활용한 실시간 자동화 품질 검사 시스템. MQTT 프로토콜로 센서 데이터를 수집하고 WebSocket으로 실시간 알림을 제공합니다.
+                    </p>
+                    <div class="project-tech">
+                        Flask, Spring Boot, MySQL, MQTT, WebSocket, Flask-SocketIO, JPA, REST API
+                    </div>
+                    <div class="project-section">
+                        <h4>담당 역할</h4>
+                        <ul>
+                            <li>ERD 및 테이블 설계, DB 연결 및 마이그레이션 관리</li>
+                            <li>Flask 앱 구조 설계 및 Blueprint 모듈 등록, API 문서 작성</li>
+                            <li>MQTT 클라이언트 구현으로 IoT 센서 데이터 실시간 수집 및 검증 로직 구현</li>
+                            <li>AI 서버와의 통신 연동 및 불량 감지 결과 처리</li>
+                            <li>Flask WebSocket 실시간 알림보드 구축 및 Spring Boot WebSocket STOMP 채팅 연동</li>
+                            <li>JWT 기반 인증 시스템 구현</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h4>성과</h4>
+                        <ul>
+                            <li>MQTT QoS 설정으로 센서 데이터 손실률 0% 달성</li>
+                            <li>데이터 검증 로직으로 통계 정확도 향상 및 왜곡 방지</li>
+                            <li>WebSocket 실시간 알림으로 불량 감지 즉시 대응 가능</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yeonjaegit/404-back" class="project-link" target="_blank">
+                            <span>Flask Backend</span>
+                            <span>→</span>
+                        </a>
+                        <a href="https://github.com/yeonjaegit/404-spring" class="project-link" target="_blank">
+                            <span>Spring Backend</span>
+                            <span>→</span>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=gPBmVkVSfhc" class="project-link video" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            <span>시연 영상</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Bros -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Bros 소셜 탐색 플랫폼</h3>
+                            <p class="project-period">2025.10 ~ 2025.12</p>
+                        </div>
+                        <span class="project-label">Backend</span>
+                    </div>
+                    <p class="project-description">
+                        Flask 기반 소셜 네트워크 및 위치 기반 서비스. 게시물 관리, 경로 탐색, 결제 시스템을 포함한 종합 백엔드 플랫폼입니다.
+                    </p>
+                    <div class="project-tech">
+                        Flask, PostgreSQL, SQLAlchemy, JWT, OAuth, REST API, Kakao Pay, OSRM
+                    </div>
+                    <div class="project-section">
+                        <h4>담당 역할</h4>
+                        <ul>
+                            <li>ERD 및 테이블 설계, PostgreSQL DB 연결 및 마이그레이션 관리</li>
+                            <li>Flask 앱 팩토리 패턴 구현 및 20개 이상 Blueprint 모듈 등록</li>
+                            <li>상세 API 문서 작성 (엔드포인트, 요청/응답 스펙 정의)</li>
+                            <li>JWT 토큰 기반 인증 및 OAuth (Google, Kakao, Naver) 소셜 로그인 구현</li>
+                            <li>게시물, 피드, 멘션 시스템 API 개발</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h4>성과</h4>
+                        <ul>
+                            <li>Blueprint 기반 모듈형 아키텍처로 확장성 및 유지보수성 향상</li>
+                            <li>카카오페이 결제 플로우 안정적 통합</li>
+                            <li>OSRM 엔진 활용 경로 탐색 기능 구현</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yeonjaegit/Bros-back" class="project-link" target="_blank">
+                            <span>GitHub Repository</span>
+                            <span>→</span>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=Y5KoIeUuco0" class="project-link video" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            <span>시연 영상</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 1: Coffee Shop -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">커피 전문 쇼핑몰 웹사이트</h3>
+                            <p class="project-period">2025.09</p>
+                        </div>
+                        <span class="project-label">Full Stack</span>
+                    </div>
+                    <p class="project-description">
+                        커피 전문 온라인 쇼핑몰 플랫폼. Spring Boot 백엔드와 React 프론트엔드를 Monorepo로 관리하며 상품 판매부터 커뮤니티까지 제공합니다.
+                    </p>
+                    <div class="project-tech">
+                        Spring Boot, Java, JPA, Spring Security, OAuth2, JWT, MySQL, React, Redux Toolkit, Vite, Bootstrap, Axios
+                    </div>
+                    <div class="project-section">
+                        <h4>담당 역할</h4>
+                        <ul>
+                            <li>Spring Boot Entity, Service, Repository, Controller 계층 구조 설계 및 구현</li>
+                            <li>상품(Product), 장바구니(Cart), 주문(Purchase), 회원(Member) 도메인 개발</li>
+                            <li>React 프론트엔드 공지사항(Notice) 페이지 구현</li>
+                            <li>JWT 인증 및 OAuth2 소셜 로그인 통합</li>
+                        </ul>
+                    </div>
+                    <div class="project-section">
+                        <h4>성과</h4>
+                        <ul>
+                            <li>Monorepo 구조로 프론트엔드-백엔드 통합 관리 경험</li>
+                            <li>JPA 기반 엔티티 설계 및 연관관계 매핑 학습</li>
+                            <li>Redux Toolkit으로 클라이언트 상태 관리 체계화</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yeonjaegit/team-test" class="project-link" target="_blank">
+                            <span>GitHub Repository</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Backend Developer Portfolio. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="https://www.notion.so/Backend-Developer-Portfolio-d42284a0eb564b69873c9d2dfe62afcd" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="color: var(--accent-color); text-decoration: none;">
+                    📄 Notion Portfolio
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+
+        // Header scroll transparency effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all project cards and skill categories
+        document.querySelectorAll('.project-card, .skill-category, .cert-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
+
