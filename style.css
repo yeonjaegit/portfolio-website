@@ -88,7 +88,7 @@ section {
 
 /* About Me 섹션만 여백 줄이기 */
 #about {
-    padding: 2rem 2rem 5rem 2rem;
+    padding: 3rem 2rem 4rem 2rem;
 }
 
 section:nth-child(even) {
@@ -196,7 +196,7 @@ h2 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 8rem 2rem 4rem;
+    padding: 8rem 2rem 6rem;
 }
 
 #hero::before {
