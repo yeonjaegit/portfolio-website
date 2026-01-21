@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="백엔드 개발자 포트폴리오 - Flask, Spring Boot 전문">
+    <link rel="icon" href="images/icons8-학교-책가방-96.png" type="image/x-icon">
     <title>최연재 개발자 포트폴리오 : CYJ's Portfolio</title>
     <link rel="stylesheet" href="style.css?v=20260120f">
 </head>
@@ -251,141 +252,196 @@
                 <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
                 PROJECTS
             </h2>
-            <div class="projects-list">
-                <!-- Project 3: 404 Smart Factory (최신) -->
-                <div class="project-card featured">
-                    <div class="project-header">
-                        <div>
-                            <h3 class="project-title">404 스마트 팩토리 시스템</h3>
-                            <p class="project-period">2025.12 ~ 2026.01</p>
+            <div class="projects-carousel">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)">‹</button>
+                <div class="projects-wrapper">
+                    <div class="projects-track">
+                        <!-- Project 3: 404 Smart Factory -->
+                        <div class="project-card">
+                            <div class="project-video-thumbnail" onclick="openVideoModal('gPBmVkVSfhc')">
+                                <img src="https://img.youtube.com/vi/gPBmVkVSfhc/maxresdefault.jpg" alt="404 프로젝트 시연 영상">
+                                <div class="play-button">▶</div>
+                                <div class="project-badge">최신 프로젝트</div>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h3 class="project-title">404 스마트 팩토리 시스템</h3>
+                                    <span class="project-label">Backend</span>
+                                </div>
+                                <p class="project-period">2025.12 ~ 2026.01</p>
+                                
+                                <div class="project-section">
+                                    <h4>📌 프로젝트 설명</h4>
+                                    <p>IoT 센서와 AI 카메라를 활용한 실시간 자동화 품질 검사 시스템. MQTT와 WebSocket으로 실시간 모니터링을 제공합니다.</p>
+                                </div>
+                                
+                                <div class="project-section">
+                                    <h4>🛠️ 기술 스택</h4>
+                                    <div class="project-tech">
+                                        <span>Flask</span>
+                                        <span>Spring Boot</span>
+                                        <span>MQTT</span>
+                                        <span>WebSocket</span>
+                                        <span>MySQL</span>
+                                        <span>JPA</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-section">
+                                    <h4>💼 내가 기여한 부분</h4>
+                                    <ul class="contribution-list">
+                                        <li>ERD 및 테이블 설계, DB 연결 및 마이그레이션 관리</li>
+                                        <li>MQTT 클라이언트 구현으로 IoT 센서 데이터 실시간 수집 및 검증 로직</li>
+                                        <li>Flask WebSocket 실시간 알림보드 구축</li>
+                                        <li>Spring Boot WebSocket STOMP 채팅 연동</li>
+                                        <li>3-Tier 데이터 검증 아키텍처 설계</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="project-section">
+                                    <h4>✨ 성과</h4>
+                                    <ul class="achievement-list">
+                                        <li>MQTT QoS 설정으로 센서 데이터 손실률 0% 달성</li>
+                                        <li>데이터 검증 로직으로 통계 정확도 향상</li>
+                                        <li>WebSocket 실시간 알림으로 불량 감지 즉시 대응 가능</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="project-links">
+                                    <div class="github-links">
+                                        <a href="https://github.com/yeonjaegit/404-back" target="_blank">Flask README</a>
+                                        <a href="https://github.com/yeonjaegit/404-spring" target="_blank">Spring README</a>
+                                    </div>
+                                    <a href="https://www.notion.so/Project-3-793b04e91c7f446badee165c601d0c15" target="_blank" class="notion-link">Notion에서 자세히 보기 →</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="project-label">Backend</span>
-                    </div>
-                    <p class="project-description">
-                        IoT 센서와 AI 카메라를 활용한 실시간 자동화 품질 검사 시스템. MQTT 프로토콜로 센서 데이터를 수집하고 WebSocket으로 실시간 알림을 제공합니다.
-                    </p>
-                    <div class="project-tech">
-                        Flask, Spring Boot, MySQL, MQTT, WebSocket, Flask-SocketIO, JPA, REST API
-                    </div>
-                    <div class="project-section">
-                        <h4>담당 역할</h4>
-                        <ul>
-                            <li>ERD 및 테이블 설계, DB 연결 및 마이그레이션 관리</li>
-                            <li>Flask 앱 구조 설계 및 Blueprint 모듈 등록, API 문서 작성</li>
-                            <li>MQTT 클라이언트 구현으로 IoT 센서 데이터 실시간 수집 및 검증 로직 구현</li>
-                            <li>AI 서버와의 통신 연동 및 불량 감지 결과 처리</li>
-                            <li>Flask WebSocket 실시간 알림보드 구축 및 Spring Boot WebSocket STOMP 채팅 연동</li>
-                            <li>JWT 기반 인증 시스템 구현</li>
-                        </ul>
-                    </div>
-                    <div class="project-section">
-                        <h4>성과</h4>
-                        <ul>
-                            <li>MQTT QoS 설정으로 센서 데이터 손실률 0% 달성</li>
-                            <li>데이터 검증 로직으로 통계 정확도 향상 및 왜곡 방지</li>
-                            <li>WebSocket 실시간 알림으로 불량 감지 즉시 대응 가능</li>
-                        </ul>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/yeonjaegit/404-back" class="project-link" target="_blank">
-                            <span>Flask Backend</span>
-                            <span>→</span>
-                        </a>
-                        <a href="https://github.com/yeonjaegit/404-spring" class="project-link" target="_blank">
-                            <span>Spring Backend</span>
-                            <span>→</span>
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=gPBmVkVSfhc" class="project-link video" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                            <span>시연 영상</span>
-                            <span>→</span>
-                        </a>
+
+                        <!-- Project 2: Bros -->
+                        <div class="project-card">
+                            <div class="project-video-thumbnail" onclick="openVideoModal('Y5KoIeUuco0')">
+                                <img src="https://img.youtube.com/vi/Y5KoIeUuco0/maxresdefault.jpg" alt="Bros 프로젝트 시연 영상">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h3 class="project-title">Bros 소셜 탐색 플랫폼</h3>
+                                    <span class="project-label">Backend</span>
+                                </div>
+                                <p class="project-period">2025.10 ~ 2025.12</p>
+                                
+                                <div class="project-section">
+                                    <h4>📌 프로젝트 설명</h4>
+                                    <p>Flask 기반 소셜 네트워크 및 위치 기반 서비스. Write-Heavy 피드 시스템과 OAuth 인증을 포함한 종합 백엔드 플랫폼입니다.</p>
+                                </div>
+                                
+                                <div class="project-section">
+                                    <h4>🛠️ 기술 스택</h4>
+                                    <div class="project-tech">
+                                        <span>Flask</span>
+                                        <span>PostgreSQL</span>
+                                        <span>SQLAlchemy</span>
+                                        <span>JWT/OAuth</span>
+                                        <span>Kakao Pay</span>
+                                        <span>OSRM</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-section">
+                                    <h4>💼 내가 기여한 부분</h4>
+                                    <ul class="contribution-list">
+                                        <li>ERD 37개 테이블 설계 및 PostgreSQL DB 연결</li>
+                                        <li>Flask 앱 팩토리 패턴 구현 및 18개 Blueprint 모듈 등록</li>
+                                        <li>JWT 토큰 기반 인증 및 OAuth 소셜 로그인 구현</li>
+                                        <li>Write-Heavy 피드 시스템 (Fan-Out-On-Write) 설계 및 구현</li>
+                                        <li>게시물, 피드, 멘션 시스템 API 개발</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="project-section">
+                                    <h4>✨ 성과</h4>
+                                    <ul class="achievement-list">
+                                        <li>피드 조회 성능 10배 향상 (500ms → 50ms)</li>
+                                        <li>Blueprint 기반 모듈형 아키텍처로 확장성 향상</li>
+                                        <li>37개 테이블 ERD 설계로 복잡한 도메인 모델링 완성</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="project-links">
+                                    <div class="github-links">
+                                        <a href="https://github.com/yeonjaegit/Bros-back" target="_blank">README</a>
+                                    </div>
+                                    <a href="https://www.notion.so/Project-2-Bros-AI-SNS-31d71a07e3b9415091f6bc17cacc9e80" target="_blank" class="notion-link">Notion에서 자세히 보기 →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 1: Coffee Shop -->
+                        <div class="project-card">
+                            <div class="project-video-thumbnail no-video">
+                                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" alt="커피 이미지">
+                            </div>
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h3 class="project-title">커피 전문 쇼핑몰</h3>
+                                    <span class="project-label">Full Stack</span>
+                                </div>
+                                <p class="project-period">2025.09</p>
+                                
+                                <div class="project-section">
+                                    <h4>📌 프로젝트 설명</h4>
+                                    <p>Spring Boot 백엔드와 React 프론트엔드를 Monorepo로 관리하는 커피 전문 온라인 쇼핑몰 플랫폼입니다.</p>
+                                </div>
+                                
+                                <div class="project-section">
+                                    <h4>🛠️ 기술 스택</h4>
+                                    <div class="project-tech">
+                                        <span>Spring Boot</span>
+                                        <span>React</span>
+                                        <span>JPA</span>
+                                        <span>MySQL</span>
+                                        <span>Redux Toolkit</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-section">
+                                    <h4>💼 내가 기여한 부분</h4>
+                                    <ul class="contribution-list">
+                                        <li>Spring Boot Entity, Service, Repository, Controller 계층 구조 설계</li>
+                                        <li>상품, 장바구니, 주문, 회원 도메인 개발</li>
+                                        <li>React 프론트엔드 공지사항(Notice) 페이지 구현</li>
+                                        <li>JWT 인증 및 OAuth2 소셜 로그인 통합</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="project-section">
+                                    <h4>✨ 성과</h4>
+                                    <ul class="achievement-list">
+                                        <li>Monorepo 구조로 프론트-백엔드 통합 관리 경험</li>
+                                        <li>JPA 기반 엔티티 설계 및 연관관계 매핑 학습</li>
+                                        <li>Redux Toolkit으로 클라이언트 상태 관리 체계화</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="project-links">
+                                    <div class="github-links">
+                                        <a href="https://github.com/yeonjaegit/FullStack_web-project" target="_blank">README</a>
+                                    </div>
+                                    <a href="https://www.notion.so/Project-1-FullStack-Web-Project-2ee62d7f696c80c9a933c619deb645ab" target="_blank" class="notion-link">Notion에서 자세히 보기 →</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Project 2: Bros -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <h3 class="project-title">Bros 소셜 탐색 플랫폼</h3>
-                            <p class="project-period">2025.10 ~ 2025.12</p>
-                        </div>
-                        <span class="project-label">Backend</span>
-                    </div>
-                    <p class="project-description">
-                        Flask 기반 소셜 네트워크 및 위치 기반 서비스. 게시물 관리, 경로 탐색, 결제 시스템을 포함한 종합 백엔드 플랫폼입니다.
-                    </p>
-                    <div class="project-tech">
-                        Flask, PostgreSQL, SQLAlchemy, JWT, OAuth, REST API, Kakao Pay, OSRM
-                    </div>
-                    <div class="project-section">
-                        <h4>담당 역할</h4>
-                        <ul>
-                            <li>ERD 및 테이블 설계, PostgreSQL DB 연결 및 마이그레이션 관리</li>
-                            <li>Flask 앱 팩토리 패턴 구현 및 20개 이상 Blueprint 모듈 등록</li>
-                            <li>상세 API 문서 작성 (엔드포인트, 요청/응답 스펙 정의)</li>
-                            <li>JWT 토큰 기반 인증 및 OAuth (Google, Kakao, Naver) 소셜 로그인 구현</li>
-                            <li>게시물, 피드, 멘션 시스템 API 개발</li>
-                        </ul>
-                    </div>
-                    <div class="project-section">
-                        <h4>성과</h4>
-                        <ul>
-                            <li>Blueprint 기반 모듈형 아키텍처로 확장성 및 유지보수성 향상</li>
-                            <li>카카오페이 결제 플로우 안정적 통합</li>
-                            <li>OSRM 엔진 활용 경로 탐색 기능 구현</li>
-                        </ul>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/yeonjaegit/Bros-back" class="project-link" target="_blank">
-                            <span>GitHub Repository</span>
-                            <span>→</span>
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=Y5KoIeUuco0" class="project-link video" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                            <span>시연 영상</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 1: Coffee Shop -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <h3 class="project-title">커피 전문 쇼핑몰 웹사이트</h3>
-                            <p class="project-period">2025.09</p>
-                        </div>
-                        <span class="project-label">Full Stack</span>
-                    </div>
-                    <p class="project-description">
-                        커피 전문 온라인 쇼핑몰 플랫폼. Spring Boot 백엔드와 React 프론트엔드를 Monorepo로 관리하며 상품 판매부터 커뮤니티까지 제공합니다.
-                    </p>
-                    <div class="project-tech">
-                        Spring Boot, Java, JPA, Spring Security, OAuth2, JWT, MySQL, React, Redux Toolkit, Vite, Bootstrap, Axios
-                    </div>
-                    <div class="project-section">
-                        <h4>담당 역할</h4>
-                        <ul>
-                            <li>Spring Boot Entity, Service, Repository, Controller 계층 구조 설계 및 구현</li>
-                            <li>상품(Product), 장바구니(Cart), 주문(Purchase), 회원(Member) 도메인 개발</li>
-                            <li>React 프론트엔드 공지사항(Notice) 페이지 구현</li>
-                            <li>JWT 인증 및 OAuth2 소셜 로그인 통합</li>
-                        </ul>
-                    </div>
-                    <div class="project-section">
-                        <h4>성과</h4>
-                        <ul>
-                            <li>Monorepo 구조로 프론트엔드-백엔드 통합 관리 경험</li>
-                            <li>JPA 기반 엔티티 설계 및 연관관계 매핑 학습</li>
-                            <li>Redux Toolkit으로 클라이언트 상태 관리 체계화</li>
-                        </ul>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/yeonjaegit/team-test" class="project-link" target="_blank">
-                            <span>GitHub Repository</span>
-                            <span>→</span>
-                        </a>
+                <button class="carousel-btn next" onclick="moveCarousel(1)">›</button>
+            </div>
+            
+            <!-- Video Modal -->
+            <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+                <div class="video-modal-content" onclick="event.stopPropagation()">
+                    <button class="modal-close" onclick="closeVideoModal()">×</button>
+                    <div class="video-container">
+                        <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -446,12 +502,66 @@
             });
         }, observerOptions);
 
-        // Observe all project cards and skill categories
-        document.querySelectorAll('.project-card, .skill-category, .cert-card').forEach(el => {
+        // Observe all skill categories and cert cards
+        document.querySelectorAll('.skill-category, .cert-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
             observer.observe(el);
+        });
+
+        // Project Carousel
+        let currentSlide = 0;
+        const track = document.querySelector('.projects-track');
+        const cards = document.querySelectorAll('.project-card');
+        const totalCards = cards.length;
+        const cardsPerView = 3;
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            
+            // Loop carousel
+            if (currentSlide < 0) {
+                currentSlide = Math.max(0, totalCards - cardsPerView);
+            } else if (currentSlide > totalCards - cardsPerView) {
+                currentSlide = 0;
+            }
+            
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 24; // 1.5rem gap
+            const offset = -(currentSlide * (cardWidth + gap));
+            track.style.transform = `translateX(${offset}px)`;
+        }
+
+        // Update carousel on window resize
+        window.addEventListener('resize', updateCarousel);
+        
+        // Video Modal Functions
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoFrame');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoFrame');
+            iframe.src = '';
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
         });
     </script>
 </body>
