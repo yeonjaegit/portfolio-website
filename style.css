@@ -566,6 +566,16 @@ h2 {
 .skill-item.jwt { background-color: #000000; }
 .skill-item.oauth { background-color: #3c873a; }
 
+/* AI Tools 개별 색상 */
+.skill-item.cursor { background-color: #000000; }
+.skill-item.copilot { background-color: #000000; }
+.skill-item.chatgpt { background-color: #10a37f; }
+
+/* AI Tools 개별 색상 */
+.skill-item.cursor { background-color: #000000; }
+.skill-item.copilot { background-color: #000000; }
+.skill-item.chatgpt { background-color: #10a37f; }
+
 /* Projects Section */
 #projects h2 {
     margin-bottom: 1.5rem !important;
