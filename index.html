@@ -6,7 +6,7 @@
     <meta name="description" content="백엔드 개발자 포트폴리오 - Flask, Spring Boot 전문">
     <link rel="icon" href="images/icons8-학교-책가방-96.png" type="image/x-icon">
     <title>최연재 개발자 포트폴리오 : CYJ's Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=20260120f">
+    <link rel="stylesheet" href="style.css?v=menu-smart">
 </head>
 <body>
     <!-- Navigation -->
@@ -480,23 +480,49 @@
         // Mobile menu toggle
         function toggleMenu() {
             const menu = document.getElementById('nav-menu');
+            const nav = document.querySelector('nav');
+            const isOpening = !menu.classList.contains('active');
+            
             menu.classList.toggle('active');
+            
+            // 메뉴가 열릴 때 헤더를 흰색으로
+            if (isOpening) {
+                nav.classList.add('scrolled');
+            } else {
+                // 메뉴가 닫힐 때 스크롤 위치 확인
+                if (window.scrollY <= 50) {
+                    nav.classList.remove('scrolled');
+                }
+            }
         }
 
         // Close menu when clicking on a link
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
-                document.getElementById('nav-menu').classList.remove('active');
+                const menu = document.getElementById('nav-menu');
+                const nav = document.querySelector('nav');
+                menu.classList.remove('active');
+                
+                // 메뉴 닫을 때 스크롤 위치 확인
+                if (window.scrollY <= 50) {
+                    nav.classList.remove('scrolled');
+                }
             });
         });
 
         // Header scroll transparency effect
         const nav = document.querySelector('nav');
         window.addEventListener('scroll', () => {
+            const menu = document.getElementById('nav-menu');
+            const isMenuOpen = menu.classList.contains('active');
+            
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
             } else {
-                nav.classList.remove('scrolled');
+                // 메뉴가 열려있으면 scrolled 유지
+                if (!isMenuOpen) {
+                    nav.classList.remove('scrolled');
+                }
             }
         });
 
@@ -528,9 +554,16 @@
         const track = document.querySelector('.projects-track');
         const cards = document.querySelectorAll('.project-card');
         const totalCards = cards.length;
-        const cardsPerView = 3;
+
+        function getCardsPerView() {
+            const width = window.innerWidth;
+            if (width <= 768) return 1;
+            if (width <= 1024) return 2;
+            return 3;
+        }
 
         function moveCarousel(direction) {
+            const cardsPerView = getCardsPerView();
             currentSlide += direction;
             
             // Loop carousel
@@ -551,7 +584,38 @@
         }
 
         // Update carousel on window resize
-        window.addEventListener('resize', updateCarousel);
+        window.addEventListener('resize', () => {
+            currentSlide = 0;
+            updateCarousel();
+        });
+
+        // Touch Swipe for Mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next
+                    moveCarousel(1);
+                } else {
+                    // Swipe right - prev
+                    moveCarousel(-1);
+                }
+            }
+        }
         
         // Video Modal Functions
         function openVideoModal(videoId) {
