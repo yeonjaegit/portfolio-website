@@ -200,7 +200,7 @@ h2 {
 #hero {
     position: relative;
     text-align: center;
-    min-height: 45vh;
+    min-height: 65vh;
     display: flex;
     align-items: center;
     justify-content: center;
